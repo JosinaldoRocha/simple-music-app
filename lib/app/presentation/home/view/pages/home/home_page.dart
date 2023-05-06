@@ -12,11 +12,16 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Home'),
+        backgroundColor: Colors.transparent,
+        title: const Text(
+          'Home',
+          style: TextStyle(color: Colors.black),
+        ),
       ),
       body: const Center(
         child: Text('Em desenvolvimento'),
       ),
+      floatingActionButton: FloatingActionButton(onPressed: () {}),
     );
   }
 }
