@@ -12,14 +12,23 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        title: const Text(
-          'Home',
-          style: TextStyle(color: Colors.black),
-        ),
+        title: const Text('Home'),
       ),
-      body: const Center(
-        child: Text('Em desenvolvimento'),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            const Icon(
+              Icons.person,
+              size: 100,
+            ),
+            SizedBox(
+                height: 60,
+                width: 200,
+                child: ElevatedButton(
+                    onPressed: () {}, child: const Text('data'))),
+          ],
+        ),
       ),
       floatingActionButton: FloatingActionButton(onPressed: () {}),
     );

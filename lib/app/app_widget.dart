@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:simple_music_app/app/app_routes.dart';
-import 'package:simple_music_app/app/shared/themes/simple_music_theme.dart';
+import 'package:simple_music_app/app/shared/themes/s_m_theme.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -9,8 +9,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: SimpleMusicTheme.getTheme(),
+      theme: SMTheme().lightTheme,
       routes: AppRoutes.all,
     );
   }
