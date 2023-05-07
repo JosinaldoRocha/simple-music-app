@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_design_system/my_design_system.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -18,6 +19,7 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
+            const ElevatedButtonWidget(),
             const Icon(
               Icons.person,
               size: 100,
