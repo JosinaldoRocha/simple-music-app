@@ -30,8 +30,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  my_design_system: 
-    path: ../packages/my_design_system
+  design_system: 
+    path: ../packages/design_system
 
   
 # O seguinte adiciona a fonte Cupertino Icons ao seu aplicativo.
