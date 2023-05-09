@@ -24,9 +24,9 @@ class HomeBody extends StatelessWidget {
               const CircleAvatar(
                 radius: 80,
                 backgroundColor: Colors.grey,
-                child: Icon(
-                  Icons.note_alt,
-                  size: 60,
+                backgroundImage: AssetImage(
+                  'assets/images/journal.png',
+                  package: 'design_system',
                 ),
               ),
             ],
@@ -51,11 +51,13 @@ class HomeBody extends StatelessWidget {
                 padding: const EdgeInsets.all(20),
                 decoration: BoxDecoration(
                   color: Colors.grey,
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                child: const Icon(
-                  Icons.book,
-                  size: 50,
+                  borderRadius: BorderRadius.circular(5),
+                  image: const DecorationImage(
+                    image: AssetImage(
+                      'assets/images/dictionary.jpg',
+                      package: 'design_system',
+                    ),
+                  ),
                 ),
               ),
               const SizedBox(width: 20),
