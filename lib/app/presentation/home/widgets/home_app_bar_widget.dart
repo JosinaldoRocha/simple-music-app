@@ -7,7 +7,7 @@ class HomeAppBarWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: lightColors.primary,
+      height: 169,
       padding: const EdgeInsets.fromLTRB(
         15,
         47,
@@ -16,25 +16,38 @@ class HomeAppBarWidget extends StatelessWidget {
       ),
       child: Row(
         children: [
-          CircleAvatar(
-            backgroundColor: lightColors.secondary,
-            radius: 33,
-            child: const Icon(
+          Container(
+            height: 80,
+            width: 80,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(40),
+              color: Colors.white,
+            ),
+            child: Icon(
               Icons.person,
-              size: 45,
+              size: 44,
+              color: lightColors.onPrimary,
             ),
           ),
-          const SizedBox(width: 10),
-          BoxText.titleMedium(
-            'Olá, usuário!',
-            color: Colors.white,
+          const SizedBox(width: 16),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              BoxText.titleMedium(
+                'Olá, usuário!',
+                color: Colors.white,
+              ),
+              BoxText.titleSmall(
+                'Nível: Iniciante',
+                color: lightColors.onPrimary,
+              ),
+            ],
           ),
           const Expanded(child: SizedBox()),
-          IconButton(
-            iconSize: 50,
-            color: Colors.white,
-            onPressed: () {},
-            icon: const Icon(Icons.menu_rounded),
+          Image.asset(
+            'assets/images/logo.png',
+            package: 'design_system',
+            width: 80,
           ),
         ],
       ),

@@ -32,7 +32,7 @@ class HomeYellowCardWidget extends StatelessWidget {
               BoxText.titleLarge(title),
               const SizedBox(width: 20),
               CircleAvatar(
-                radius: 60,
+                radius: 50,
                 backgroundColor: Colors.grey,
                 backgroundImage: AssetImage(
                   image,

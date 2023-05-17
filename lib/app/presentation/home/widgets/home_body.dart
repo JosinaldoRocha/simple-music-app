@@ -8,27 +8,39 @@ class HomeBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      shrinkWrap: true,
-      children: [
-        HomeYellowCardWidget(
-          title: 'Caderno\nde cifras',
-          image: 'assets/images/journal.png',
-          onTap: () {},
+    return Expanded(
+      child: Container(
+        padding: const EdgeInsets.all(20),
+        decoration: const BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(30),
+            topRight: Radius.circular(30),
+          ),
         ),
-        const Space.x5(),
-        HomeRedCardWidget(
-          title: 'Dicionário\nde acordes',
-          image: 'assets/images/dictionary.jpg',
-          onTap: () {},
+        child: ListView(
+          shrinkWrap: true,
+          children: [
+            HomeYellowCardWidget(
+              title: 'Caderno\nde cifras',
+              image: 'assets/images/journal.png',
+              onTap: () {},
+            ),
+            const Space.x5(),
+            HomeRedCardWidget(
+              title: 'Dicionário\nde acordes',
+              image: 'assets/images/dictionary.jpg',
+              onTap: () {},
+            ),
+            const Space.x5(),
+            HomeYellowCardWidget(
+              title: '  Vídeo  \n  aulas  ',
+              image: 'assets/images/capa.png',
+              onTap: () {},
+            ),
+          ],
         ),
-        const Space.x5(),
-        HomeYellowCardWidget(
-          title: '  Vídeo  \n  aulas  ',
-          image: 'assets/images/capa.png',
-          onTap: () {},
-        ),
-      ],
+      ),
     );
   }
 }

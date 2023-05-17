@@ -29,8 +29,8 @@ class HomeRedCardWidget extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Container(
-                height: 130,
-                width: 130,
+                height: 100,
+                width: 100,
                 padding: const EdgeInsets.all(20),
                 decoration: BoxDecoration(
                   color: Colors.grey,
