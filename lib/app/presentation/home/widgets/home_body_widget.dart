@@ -7,45 +7,29 @@ class HomeBodyWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: Container(
-        padding: const EdgeInsets.only(
-          top: 44,
-          left: 20,
-          right: 20,
+    return ListView(
+      shrinkWrap: true,
+      padding: EdgeInsets.zero,
+      children: [
+        HomeRedCardWidget(
+          title: 'Caderno de cifras',
+          image: 'assets/images/journal.png',
+          onTap: () {},
         ),
-        decoration: const BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(30),
-            topRight: Radius.circular(30),
-          ),
+        const Space.x4(),
+        HomeRedCardWidget(
+          title: 'Dicionário de acordes',
+          image: 'assets/images/dictionary.jpg',
+          onTap: () {},
         ),
-        child: ListView(
-          shrinkWrap: true,
-          padding: EdgeInsets.zero,
-          children: [
-            HomeRedCardWidget(
-              title: 'Caderno de cifras',
-              image: 'assets/images/journal.png',
-              onTap: () {},
-            ),
-            const Space.x4(),
-            HomeRedCardWidget(
-              title: 'Dicionário de acordes',
-              image: 'assets/images/dictionary.jpg',
-              onTap: () {},
-            ),
-            const Space.x4(),
-            HomeRedCardWidget(
-              title: 'Vídeo aulas',
-              image: 'assets/images/youtube.png',
-              onTap: () {},
-            ),
-            const Space.x4(),
-          ],
+        const Space.x4(),
+        HomeRedCardWidget(
+          title: 'Vídeo aulas',
+          image: 'assets/images/youtube.png',
+          onTap: () {},
         ),
-      ),
+        const Space.x4(),
+      ],
     );
   }
 }
