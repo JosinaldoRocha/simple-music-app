@@ -1,8 +1,8 @@
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
-class HomeRedCardWidget extends StatelessWidget {
-  const HomeRedCardWidget({
+class HomeItemButtonWidget extends StatelessWidget {
+  const HomeItemButtonWidget({
     Key? key,
     required this.title,
     required this.image,
