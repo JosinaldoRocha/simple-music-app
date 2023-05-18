@@ -14,44 +14,42 @@ class HomeRedCardWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        ElevatedButton(
-          style: ElevatedButton.styleFrom(
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(10),
-            ),
-            padding: const EdgeInsets.all(20),
-            backgroundColor: lightColors.primary,
+    return SizedBox(
+      height: 97,
+      child: ElevatedButton(
+        style: ElevatedButton.styleFrom(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10),
           ),
-          onPressed: onTap,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              Container(
-                height: 100,
-                width: 100,
-                padding: const EdgeInsets.all(20),
-                decoration: BoxDecoration(
-                  color: Colors.grey,
-                  borderRadius: BorderRadius.circular(5),
-                  image: DecorationImage(
-                    image: AssetImage(
-                      image,
-                      package: 'design_system',
-                    ),
+          padding: const EdgeInsets.all(14),
+        ),
+        onPressed: onTap,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Container(
+              height: 69,
+              width: 69,
+              padding: const EdgeInsets.all(20),
+              decoration: BoxDecoration(
+                color: Colors.grey,
+                borderRadius: BorderRadius.circular(5),
+                image: DecorationImage(
+                  image: AssetImage(
+                    image,
+                    package: 'design_system',
                   ),
                 ),
               ),
-              const SizedBox(width: 20),
-              BoxText.titleLarge(
-                title,
-                color: Colors.white,
-              ),
-            ],
-          ),
+            ),
+            const SizedBox(width: 12),
+            BoxText.titleLarge(
+              title,
+              color: Colors.white,
+            ),
+          ],
         ),
-      ],
+      ),
     );
   }
 }
