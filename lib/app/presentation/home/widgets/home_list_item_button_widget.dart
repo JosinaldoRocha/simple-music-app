@@ -20,7 +20,9 @@ class HomeListItemButtonWidget extends StatelessWidget {
         HomeItemButtonWidget(
           title: 'Dicionário de acordes',
           image: 'assets/images/dictionary.jpg',
-          onTap: () {},
+          onTap: () {
+            Navigator.pushNamed(context, '/chord-dictionary');
+          },
         ),
         const Space.x4(),
         HomeItemButtonWidget(
