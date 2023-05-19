@@ -1,5 +1,6 @@
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
+import '../../widgets/chord_type_list_widget.dart';
 
 class ChordDictionaryPage extends StatefulWidget {
   const ChordDictionaryPage({Key? key}) : super(key: key);
@@ -30,6 +31,7 @@ class _ChordDictionaryPageState extends State<ChordDictionaryPage> {
                   topRight: Radius.circular(30),
                 ),
               ),
+              child: ChordTypeListWidget(),
             ),
           ),
         ],
