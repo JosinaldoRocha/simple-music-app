@@ -17,16 +17,19 @@ class ChordTypeListWidget extends StatelessWidget {
         const Space.x10(),
         ChordTypeItemWidget(
           title: 'Acordes sustenidos',
+          cipher: '#',
           onTap: () {},
         ),
         const Space.x10(),
         ChordTypeItemWidget(
           title: 'Acordes bemóis',
+          cipher: 'b',
           onTap: () {},
         ),
         const Space.x10(),
         ChordTypeItemWidget(
           title: 'Acordes com sétima',
+          cipher: '7',
           onTap: () {},
         ),
       ],

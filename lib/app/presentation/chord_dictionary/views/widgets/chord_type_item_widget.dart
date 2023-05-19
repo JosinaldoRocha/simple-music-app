@@ -19,6 +19,9 @@ class ChordTypeItemWidget extends StatelessWidget {
         backgroundColor: Colors.white,
         elevation: 0,
         padding: EdgeInsets.zero,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(35),
+        ),
       ),
       onPressed: onTap,
       child: Row(
