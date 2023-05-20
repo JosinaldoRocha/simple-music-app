@@ -6,18 +6,22 @@ class ChordRepository {
 
     return [
       ChordTypeModel(
+        id: 'a',
         title: 'Acordes naturais',
         cipher: '',
       ),
       ChordTypeModel(
+        id: 'a#',
         title: 'Acordes sustenidos',
         cipher: '#',
       ),
       ChordTypeModel(
+        id: 'ab',
         title: 'Acordes bemóis',
         cipher: 'b',
       ),
       ChordTypeModel(
+        id: 'a7',
         title: 'Acordes com sétima',
         cipher: '7',
       ),

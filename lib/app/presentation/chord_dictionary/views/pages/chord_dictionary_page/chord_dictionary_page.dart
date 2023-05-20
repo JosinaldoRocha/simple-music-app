@@ -35,7 +35,7 @@ class _ChordDictionaryPageState extends ConsumerState<ChordDictionaryPage> {
             Expanded(
               child: Container(
                 padding: const EdgeInsets.only(
-                  top: 44,
+                  top: 30,
                   left: 20,
                   right: 20,
                 ),
@@ -46,7 +46,7 @@ class _ChordDictionaryPageState extends ConsumerState<ChordDictionaryPage> {
                     topRight: Radius.circular(30),
                   ),
                 ),
-                child: ChordTypeListWidget(),
+                child: ChordTypeListWidget(chordTypes: state.data),
               ),
             ),
           ],
