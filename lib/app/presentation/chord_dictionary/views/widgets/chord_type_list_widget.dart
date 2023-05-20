@@ -19,7 +19,7 @@ class ChordTypeListWidget extends StatelessWidget {
         cipher: chordTypes[index].cipher,
         onTap: () {},
       ),
-      separatorBuilder: (context, index) => const Space.x8(),
+      separatorBuilder: (context, index) => const Space.x6(),
       itemCount: chordTypes.length,
     );
   }
