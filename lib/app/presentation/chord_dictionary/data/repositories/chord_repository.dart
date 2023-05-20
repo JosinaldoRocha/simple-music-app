@@ -1,7 +1,7 @@
 import 'package:simple_music_app/app/presentation/chord_dictionary/data/models/chord_type_model.dart';
 
 class ChordRepository {
-  Future<List<ChordTypeModel>> chordTypes() async {
+  Future<List<ChordTypeModel>> getAllChordTypes() async {
     await Future.delayed(const Duration(seconds: 2));
 
     return [
