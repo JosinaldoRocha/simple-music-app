@@ -73,6 +73,22 @@ class _ChordDictionaryPageState extends ConsumerState<ChordDictionaryPage> {
           ),
         ],
       ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      floatingActionButton: (widgetIndex > 0)
+          ? FloatingActionButton(
+              backgroundColor: lightColors.secondary,
+              onPressed: () {
+                setState(() {
+                  if (widgetIndex == 1) {
+                    widgetIndex = 0;
+                  } else if (widgetIndex == 2) {
+                    widgetIndex = 1;
+                  }
+                });
+              },
+              child: const Icon(Icons.arrow_back),
+            )
+          : Container(),
     );
   }
 }
