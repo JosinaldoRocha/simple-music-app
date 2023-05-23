@@ -33,8 +33,6 @@ class ChordTypeItemWidget extends StatelessWidget {
               borderRadius: BorderRadius.circular(40),
               color: lightColors.secondary,
             ),
-            //TODO
-            // o filho será o a letra 'A' com o parâmetro 'cifra' do chord model
             child: Center(
               child: Text(
                 'A$cipher',
