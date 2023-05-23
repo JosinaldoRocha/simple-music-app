@@ -1,8 +1,7 @@
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:simple_music_app/app/presentation/chord_dictionary/providers/chord_dictionary_providers.dart';
-import 'package:simple_music_app/app/presentation/chord_dictionary/views/states/chord_type/chord_type_list_state.dart';
+import '../../../providers/chord_dictionary_providers.dart';
 import '../../widgets/chord_type_list_widget.dart';
 
 class ChordDictionaryPage extends ConsumerStatefulWidget {
@@ -14,50 +13,66 @@ class ChordDictionaryPage extends ConsumerStatefulWidget {
 }
 
 class _ChordDictionaryPageState extends ConsumerState<ChordDictionaryPage> {
+  int widgetIndex = 0;
+
+  chanceIndex(int index) {
+    setState(() {
+      widgetIndex = index;
+    });
+  }
+
+  Widget changeWidget() {
+    if (widgetIndex == 0) {
+      return ChordTypeListWidget(onTap: () => chanceIndex(1));
+    } else if (widgetIndex == 1) {
+      return const Center(
+        child: Text('Segundo widget'),
+      );
+    } else if (widgetIndex == 2) {
+      return const Center(
+        child: Text('Terceiro widget'),
+      );
+    } else {
+      return const Center(
+        child: Text('Nada aqui'),
+      );
+    }
+  }
+
   @override
   void initState() {
     super.initState();
-    Future.microtask(() => ref.read(chordTypeListProvider.notifier).load());
+    setState(() {
+      Future.microtask(() => ref.read(chordTypeListProvider.notifier).load());
+    });
   }
 
   @override
   Widget build(BuildContext context) {
-    final state = ref.watch(chordTypeListProvider);
-
-    if (state is LoadingChordTypeListState) {
-      return const LoadingWidget();
-    } else if (state is SuccessChordTypeListState) {
-      return Scaffold(
-        backgroundColor: lightColors.secondary,
-        body: Column(
-          children: [
-            const AppBarWidget(title: 'Dicionário de acordes'),
-            Expanded(
-              child: Container(
-                padding: const EdgeInsets.only(
-                  top: 30,
-                  left: 20,
-                  right: 20,
-                ),
-                decoration: const BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(30),
-                    topRight: Radius.circular(30),
-                  ),
-                ),
-                child: ChordTypeListWidget(chordTypes: state.data),
+    return Scaffold(
+      backgroundColor: lightColors.secondary,
+      body: Column(
+        children: [
+          const AppBarWidget(title: 'Dicionário de acordes'),
+          Expanded(
+            child: Container(
+              padding: const EdgeInsets.only(
+                top: 30,
+                left: 20,
+                right: 20,
               ),
+              decoration: const BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(30),
+                  topRight: Radius.circular(30),
+                ),
+              ),
+              child: changeWidget(),
             ),
-          ],
-        ),
-      );
-    } else if (state is FailureChordTypeListState) {
-      return Center(
-        child: Text(state.erroMessage),
-      );
-    } else {
-      return Container();
-    }
+          ),
+        ],
+      ),
+    );
   }
 }
