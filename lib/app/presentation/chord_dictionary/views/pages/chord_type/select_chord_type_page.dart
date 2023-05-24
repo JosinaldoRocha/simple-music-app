@@ -5,15 +5,15 @@ import '../../../providers/chord_dictionary_providers.dart';
 import '../../states/chord_type/chord_type_list_state.dart';
 import '../../widgets/chord_type_list_widget.dart';
 
-class ChordDictionaryPage extends ConsumerStatefulWidget {
-  const ChordDictionaryPage({super.key});
+class SelectChordTypePage extends ConsumerStatefulWidget {
+  const SelectChordTypePage({super.key});
 
   @override
   ConsumerState<ConsumerStatefulWidget> createState() =>
-      _ChordDictionaryPageState();
+      _SelectChordTypePageState();
 }
 
-class _ChordDictionaryPageState extends ConsumerState<ChordDictionaryPage> {
+class _SelectChordTypePageState extends ConsumerState<SelectChordTypePage> {
   @override
   void initState() {
     super.initState();

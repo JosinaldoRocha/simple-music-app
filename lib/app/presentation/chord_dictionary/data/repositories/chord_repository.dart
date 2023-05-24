@@ -75,7 +75,7 @@ class ChordRepository {
           ChordSubtypeModel(
             id: 'am7m',
             title: 'Menores com sétima menor',
-            cipher: '7M',
+            cipher: '7m',
           ),
         ],
       ),
