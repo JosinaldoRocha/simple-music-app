@@ -1,7 +1,28 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:simple_music_app/app/presentation/chord_dictionary/data/models/chord_model.dart';
 import 'package:simple_music_app/app/presentation/chord_dictionary/data/models/chord_subtype_model.dart';
 import 'package:simple_music_app/app/presentation/chord_dictionary/data/models/chord_type_model.dart';
 
 class ChordRepository {
+  final _firestore = FirebaseFirestore.instance;
+
+  Future<List<ChordModel>> getAllChords(String id) async {
+    final getDocuments = await _firestore
+        .collection('chords')
+        .where('user-id', isEqualTo: id)
+        .get();
+    final documents = getDocuments.docs;
+    List<ChordModel> historics = [];
+
+    for (var docs in documents) {
+      final item = ChordModel.fromSnapShot(docs);
+      historics.add(item);
+    }
+    historics.sort((a, b) => a.name.compareTo(b.name));
+
+    return historics;
+  }
+
   Future<List<ChordTypeModel>> getAllChordTypes() async {
     await Future.delayed(const Duration(seconds: 2));
 
@@ -13,11 +34,13 @@ class ChordRepository {
         chordSubtype: [
           ChordSubtypeModel(
             id: 'aM',
+            chordTypeId: 'a',
             title: 'Maiores',
             cipher: 'M',
           ),
           ChordSubtypeModel(
             id: 'am',
+            chordTypeId: 'a',
             title: 'Menores',
             cipher: 'm',
           ),
@@ -30,11 +53,13 @@ class ChordRepository {
         chordSubtype: [
           ChordSubtypeModel(
             id: 'a#M',
+            chordTypeId: 'a#',
             title: 'Maiores',
             cipher: '#',
           ),
           ChordSubtypeModel(
             id: 'a#m',
+            chordTypeId: 'a#',
             title: 'Menores',
             cipher: '#m',
           ),
@@ -47,11 +72,13 @@ class ChordRepository {
         chordSubtype: [
           ChordSubtypeModel(
             id: 'abM',
+            chordTypeId: 'ab',
             title: 'Maiores',
             cipher: 'b',
           ),
           ChordSubtypeModel(
             id: 'abm',
+            chordTypeId: 'ab',
             title: 'Menores',
             cipher: 'bm',
           ),
@@ -64,16 +91,19 @@ class ChordRepository {
         chordSubtype: [
           ChordSubtypeModel(
             id: 'aM7M',
+            chordTypeId: 'a7',
             title: 'Maiores com sétima maior',
             cipher: '7M',
           ),
           ChordSubtypeModel(
             id: 'aM7m',
+            chordTypeId: 'a7',
             title: 'Maiores com sétima menor',
             cipher: '7',
           ),
           ChordSubtypeModel(
             id: 'am7m',
+            chordTypeId: 'a7',
             title: 'Menores com sétima menor',
             cipher: '7m',
           ),
