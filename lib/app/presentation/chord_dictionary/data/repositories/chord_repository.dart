@@ -12,7 +12,8 @@ class ChordRepository {
   ) async {
     final getDocuments = await _firestore
         .collection('chords')
-        //.where('chordTypeId', isEqualTo: chordTypeId)
+        .where('chordTypeId', isEqualTo: chordTypeId)
+        .where('chordSubtypeId', isEqualTo: chordSubtypeId)
         .get();
     final documents = getDocuments.docs;
     List<ChordModel> historics = [];
