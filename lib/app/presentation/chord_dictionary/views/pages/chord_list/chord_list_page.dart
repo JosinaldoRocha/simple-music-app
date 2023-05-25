@@ -2,6 +2,7 @@ import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:simple_music_app/app/presentation/chord_dictionary/data/models/chord_subtype_model.dart';
+import 'package:simple_music_app/app/presentation/chord_dictionary/views/widgets/chord_item_widget.dart';
 import '../../../providers/chord_dictionary_providers.dart';
 import '../../states/chord_type/chord_type_list_state.dart';
 import '../../widgets/chord_type_list_widget.dart';
@@ -37,7 +38,8 @@ class _ChordListPageState extends ConsumerState<ChordListPage> {
       backgroundColor: lightColors.secondary,
       body: Column(
         children: [
-          const AppBarWidget(title: 'Dicionário de acordes'),
+          AppBarWidget(
+              title: 'Acordes ${widget.chordSubtype.title.toLowerCase()}'),
           Expanded(
             child: Container(
               padding: const EdgeInsets.only(
@@ -52,7 +54,14 @@ class _ChordListPageState extends ConsumerState<ChordListPage> {
                   topRight: Radius.circular(30),
                 ),
               ),
-              //child: ChordTypeListWidget(chordType: state.data),
+              // child: ListView.separated(
+              //     itemBuilder: (context, index) => ChordItemWidget(
+              //           title: 'title',
+              //           cipher: 'cipher',
+              //           onTap: () {},
+              //         ),
+              //     separatorBuilder: (context, index) => const Space.x3(),
+              //     itemCount: widget.chordSubtype.),
             ),
           ),
         ],

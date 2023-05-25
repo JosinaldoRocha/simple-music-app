@@ -49,7 +49,13 @@ class _SelectChordSubtypePageState
                 itemBuilder: (context, index) => ChordSubtypeItemWidget(
                   title: chordSubtype[index].title,
                   cipher: chordSubtype[index].cipher,
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.pushNamed(
+                      context,
+                      '/chord-list',
+                      arguments: chordSubtype[index],
+                    );
+                  },
                 ),
                 itemCount: chordSubtype.length,
               ),
