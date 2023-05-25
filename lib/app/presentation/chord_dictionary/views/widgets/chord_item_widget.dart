@@ -9,44 +9,50 @@ class ChordItemWidget extends StatelessWidget {
     required this.onTap,
   }) : super(key: key);
   final String title;
-  final String? cipher;
+  final String cipher;
   final Function() onTap;
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      style: ElevatedButton.styleFrom(
-        backgroundColor: lightColors.secondary,
-        //elevation: 0,
-        padding: EdgeInsets.zero,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(10),
+    return SizedBox(
+      height: 60,
+      child: ElevatedButton(
+        style: ElevatedButton.styleFrom(
+          backgroundColor: lightColors.secondary,
+          padding: const EdgeInsets.symmetric(horizontal: 15),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10),
+          ),
         ),
-      ),
-      onPressed: onTap,
-      child: Row(
-        children: [
-          Container(
-            height: 70,
-            width: 70,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(40),
-              color: lightColors.secondary,
+        onPressed: onTap,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            BoxText.titleMedium(
+              title,
+              color: Colors.white,
             ),
-            child: Center(
-              child: Text(
-                'A$cipher',
-                style: const TextStyle(
-                  fontWeight: FontWeight.w700,
-                  fontSize: 24,
-                  color: Colors.white,
+            const SizedBox(width: 25),
+            Container(
+              height: 45,
+              width: 45,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(40),
+                color: const Color.fromRGBO(251, 203, 146, 1),
+              ),
+              child: Center(
+                child: Text(
+                  cipher,
+                  style: TextStyle(
+                    fontWeight: FontWeight.w700,
+                    fontSize: 20,
+                    color: lightColors.secondary,
+                  ),
                 ),
               ),
             ),
-          ),
-          const SizedBox(width: 25),
-          BoxText.titleMedium(title),
-        ],
+          ],
+        ),
       ),
     );
   }

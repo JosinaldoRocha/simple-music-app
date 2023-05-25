@@ -6,10 +6,13 @@ import 'package:simple_music_app/app/presentation/chord_dictionary/data/models/c
 class ChordRepository {
   final _firestore = FirebaseFirestore.instance;
 
-  Future<List<ChordModel>> getAllChords(String id) async {
+  Future<List<ChordModel>> getAllChords(
+    String chordTypeId,
+    String chordSubtypeId,
+  ) async {
     final getDocuments = await _firestore
         .collection('chords')
-        .where('user-id', isEqualTo: id)
+        //.where('chordTypeId', isEqualTo: chordTypeId)
         .get();
     final documents = getDocuments.docs;
     List<ChordModel> historics = [];
