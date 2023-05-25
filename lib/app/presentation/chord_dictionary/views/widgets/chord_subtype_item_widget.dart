@@ -45,7 +45,7 @@ class ChordSubtypeItemWidget extends StatelessWidget {
                 ),
                 child: Center(
                   child: Text(
-                    '$cipher',
+                    cipher,
                     style: TextStyle(
                       fontWeight: FontWeight.w700,
                       fontSize: 24,

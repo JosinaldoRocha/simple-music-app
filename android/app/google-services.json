@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "923769485534",
+    "project_id": "simple-music-app-2ba36",
+    "storage_bucket": "simple-music-app-2ba36.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:923769485534:android:dc245404ac3f869638aa4f",
+        "android_client_info": {
+          "package_name": "com.example.simple_music_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "923769485534-a31l1jm12jsnr5kmtbb1lama7esp6nt6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBOvMSetEJM-iV2TVH8bRCNH0_rlielGO0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "923769485534-a31l1jm12jsnr5kmtbb1lama7esp6nt6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
