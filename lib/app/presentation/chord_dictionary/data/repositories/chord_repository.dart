@@ -22,7 +22,7 @@ class ChordRepository {
       final item = ChordModel.fromSnapShot(docs);
       historics.add(item);
     }
-    historics.sort((a, b) => a.name.compareTo(b.name));
+    historics.sort((a, b) => a.cipher.compareTo(b.cipher));
 
     return historics;
   }

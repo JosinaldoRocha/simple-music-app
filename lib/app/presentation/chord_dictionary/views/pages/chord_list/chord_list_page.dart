@@ -56,15 +56,37 @@ class _ChordListPageState extends ConsumerState<ChordListPage> {
                     topRight: Radius.circular(30),
                   ),
                 ),
-                child: ListView.separated(
-                    itemBuilder: (context, index) => ChordItemWidget(
-                          title:
-                              '${state.data[index].name} / ${state.data[index].fullName}',
-                          cipher: state.data[index].cipher,
-                          onTap: () {},
+                child: (state.data.isEmpty)
+                    ? Center(
+                        child: BoxText.titleMedium(
+                          'Ainda não há acordes\npara essa categoria',
+                          textAlign: TextAlign.center,
                         ),
-                    separatorBuilder: (context, index) => const Space.x3(),
-                    itemCount: state.data.length),
+                      )
+                    : ListView.separated(
+                        itemBuilder: (context, index) => ChordItemWidget(
+                              title: (state.data[index].name.isNotEmpty)
+                                  ? '${state.data[index].name} / ${state.data[index].fullName}'
+                                  : state.data[index].fullName,
+                              cipher: state.data[index].cipher,
+                              onTap: () {
+                                showDialog(
+                                  context: context,
+                                  builder: (context) => AlertDialog(
+                                    content: SizedBox(
+                                      height: 300,
+                                      child: Center(
+                                        child: Image.network(
+                                          state.data[index].image,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                );
+                              },
+                            ),
+                        separatorBuilder: (context, index) => const Space.x4(),
+                        itemCount: state.data.length),
               ),
             ),
           ],
