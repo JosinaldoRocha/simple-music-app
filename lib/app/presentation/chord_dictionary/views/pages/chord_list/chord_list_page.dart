@@ -1,10 +1,10 @@
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:simple_music_app/app/presentation/chord_dictionary/data/models/chord_subtype_model.dart';
+import '../../../data/models/chord_subtype_model.dart';
 import '../../../providers/chord_dictionary_providers.dart';
 import '../../states/chords/chord_list_state.dart';
-import '../../widgets/chord_item_widget.dart';
+import '../../widgets/chord/chord_list_widget.dart';
 
 class ChordListPage extends ConsumerStatefulWidget {
   const ChordListPage({
@@ -63,30 +63,7 @@ class _ChordListPageState extends ConsumerState<ChordListPage> {
                           textAlign: TextAlign.center,
                         ),
                       )
-                    : ListView.separated(
-                        itemBuilder: (context, index) => ChordItemWidget(
-                              title: (state.data[index].name.isNotEmpty)
-                                  ? '${state.data[index].name} / ${state.data[index].fullName}'
-                                  : state.data[index].fullName,
-                              cipher: state.data[index].cipher,
-                              onTap: () {
-                                showDialog(
-                                  context: context,
-                                  builder: (context) => AlertDialog(
-                                    content: SizedBox(
-                                      height: 300,
-                                      child: Center(
-                                        child: Image.network(
-                                          state.data[index].image,
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                );
-                              },
-                            ),
-                        separatorBuilder: (context, index) => const Space.x4(),
-                        itemCount: state.data.length),
+                    : ChordListWidget(chord: state.data),
               ),
             ),
           ],

@@ -2,7 +2,7 @@ import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:simple_music_app/app/presentation/chord_dictionary/data/models/chord_type_model.dart';
-import 'package:simple_music_app/app/presentation/chord_dictionary/views/widgets/chord_type_item_widget.dart';
+import 'chord_type_item_widget.dart';
 
 class ChordTypeListWidget extends ConsumerStatefulWidget {
   const ChordTypeListWidget({

@@ -1,8 +1,8 @@
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:simple_music_app/app/presentation/chord_dictionary/views/widgets/chord_subtype_item_widget.dart';
 import '../../../data/models/chord_type_model.dart';
+import '../../widgets/chord_subtype/chord_subtype_list_widget.dart';
 
 class SelectChordSubtypePage extends ConsumerStatefulWidget {
   const SelectChordSubtypePage({
@@ -41,24 +41,7 @@ class _SelectChordSubtypePageState
                   topRight: Radius.circular(30),
                 ),
               ),
-              child: GridView.builder(
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                ),
-                padding: EdgeInsets.zero,
-                itemBuilder: (context, index) => ChordSubtypeItemWidget(
-                  title: chordSubtype[index].title,
-                  cipher: chordSubtype[index].cipher,
-                  onTap: () {
-                    Navigator.pushNamed(
-                      context,
-                      '/chord-list',
-                      arguments: chordSubtype[index],
-                    );
-                  },
-                ),
-                itemCount: chordSubtype.length,
-              ),
+              child: ChordSubtypeListWidget(chordSubtype: chordSubtype),
             ),
           ),
         ],

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../providers/chord_dictionary_providers.dart';
 import '../../states/chord_type/chord_type_list_state.dart';
-import '../../widgets/chord_type_list_widget.dart';
+import '../../widgets/chord_type/chord_type_list_widget.dart';
 
 class SelectChordTypePage extends ConsumerStatefulWidget {
   const SelectChordTypePage({super.key});
