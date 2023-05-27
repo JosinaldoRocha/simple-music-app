@@ -15,11 +15,13 @@ class ChordItemWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 60,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
           backgroundColor: lightColors.secondary,
-          padding: const EdgeInsets.symmetric(horizontal: 15),
+          padding: const EdgeInsets.symmetric(
+            horizontal: 15,
+            vertical: 5,
+          ),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10),
           ),
@@ -28,11 +30,14 @@ class ChordItemWidget extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            BoxText.titleMedium(
-              title,
-              color: Colors.white,
+            SizedBox(
+              width: 200,
+              child: BoxText.titleMedium(
+                title,
+                color: Colors.white,
+              ),
             ),
-            const SizedBox(width: 25),
+            const SizedBox(width: 20),
             Container(
               height: 45,
               width: 45,

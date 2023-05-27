@@ -13,8 +13,9 @@ class ChordListWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.separated(
+      padding: EdgeInsets.zero,
       itemBuilder: (context, index) => ChordItemWidget(
-        title: (chord[index].name.isNotEmpty)
+        title: (chord[index].name!.isNotEmpty || chord[index].name == null)
             ? '${chord[index].name} / ${chord[index].fullName}'
             : chord[index].fullName,
         cipher: chord[index].cipher,
