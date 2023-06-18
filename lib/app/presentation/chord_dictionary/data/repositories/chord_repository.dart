@@ -28,7 +28,7 @@ class ChordRepository {
   }
 
   Future<List<ChordTypeModel>> getAllChordTypes() async {
-    await Future.delayed(const Duration(seconds: 2));
+    await Future.delayed(const Duration(seconds: 1));
 
     return [
       ChordTypeModel(
@@ -98,18 +98,78 @@ class ChordRepository {
             chordTypeId: 'acordeComSetima',
             title: 'Maiores com sétima maior',
             cipher: '7M',
+            seventhChordTypes: [
+              ChordSubtypeModel(
+                id: 'acordeNaturalMaiorComSetimaMaior',
+                chordTypeId: 'acordeComSetima',
+                title: 'Naturais',
+                cipher: '7M',
+              ),
+              ChordSubtypeModel(
+                id: 'acordeSustenidoMaiorComSetimaMaior',
+                chordTypeId: 'acordeComSetima',
+                title: 'Sustenidos',
+                cipher: '#7M',
+              ),
+              ChordSubtypeModel(
+                id: 'acordeBemolMaiorComSetimaMaior',
+                chordTypeId: 'acordeComSetima',
+                title: 'Bemóis',
+                cipher: 'b7M',
+              ),
+            ],
           ),
           ChordSubtypeModel(
             id: 'acordeMaior',
             chordTypeId: 'acordeComSetima',
             title: 'Maiores com sétima menor',
             cipher: '7',
+            seventhChordTypes: [
+              ChordSubtypeModel(
+                id: 'acordeNaturalMaiorComSetimaMenor',
+                chordTypeId: 'acordeComSetima',
+                title: 'Naturais',
+                cipher: '7',
+              ),
+              ChordSubtypeModel(
+                id: 'acordeSustenidoMaiorComSetimaMenor',
+                chordTypeId: 'acordeComSetima',
+                title: 'Sustenidos',
+                cipher: '#7',
+              ),
+              ChordSubtypeModel(
+                id: 'acordeBemolMaiorComSetimaMenor',
+                chordTypeId: 'acordeComSetima',
+                title: 'Bemóis',
+                cipher: 'b7',
+              ),
+            ],
           ),
           ChordSubtypeModel(
             id: 'acordeMenor',
             chordTypeId: 'acordeComSetima',
             title: 'Menores com sétima menor',
             cipher: '7m',
+            seventhChordTypes: [
+              ChordSubtypeModel(
+                id: 'acordeNaturalMenorComSetimaMenor',
+                chordTypeId: 'acordeComSetima',
+                title: 'Naturais',
+                cipher: 'm7',
+              ),
+              ChordSubtypeModel(
+                id: 'acordeSustenidoMenorComSetimaMenor',
+                chordTypeId: 'acordeComSetima',
+                title: 'Sustenidos',
+                cipher: '#m7',
+              ),
+              ChordSubtypeModel(
+                id: 'acordeBemolMenorComSetimaMenor',
+                chordTypeId: 'acordeComSetima',
+                title: 'Bemóis',
+                cipher: 'bm7',
+              ),
+            ],
           ),
         ],
       ),

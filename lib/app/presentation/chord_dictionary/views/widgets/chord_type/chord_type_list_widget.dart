@@ -25,11 +25,19 @@ class _ChordTypeListWidgetState extends ConsumerState<ChordTypeListWidget> {
         title: widget.chordType[index].title,
         cipher: widget.chordType[index].cipher,
         onTap: () {
-          Navigator.pushNamed(
-            context,
-            '/select-chord-subtype',
-            arguments: widget.chordType[index],
-          );
+          if (widget.chordType[index].id == 'acordeComSetima') {
+            Navigator.pushNamed(
+              context,
+              '/select-seventh-chord-type',
+              arguments: widget.chordType[index].chordSubtype,
+            );
+          } else {
+            Navigator.pushNamed(
+              context,
+              '/select-chord-subtype',
+              arguments: widget.chordType[index],
+            );
+          }
         },
       ),
       separatorBuilder: (context, index) => const Space.x6(),

@@ -20,11 +20,19 @@ class ChordSubtypeListWidget extends StatelessWidget {
         title: chordSubtype[index].title,
         cipher: chordSubtype[index].cipher,
         onTap: () {
-          Navigator.pushNamed(
-            context,
-            '/chord-list',
-            arguments: chordSubtype[index],
-          );
+          if (chordSubtype[index].chordTypeId == 'acordeComSetima') {
+            Navigator.pushNamed(
+              context,
+              '/select-seventh-chord-type',
+              arguments: chordSubtype[index],
+            );
+          } else {
+            Navigator.pushNamed(
+              context,
+              '/chord-list',
+              arguments: chordSubtype[index],
+            );
+          }
         },
       ),
       itemCount: chordSubtype.length,

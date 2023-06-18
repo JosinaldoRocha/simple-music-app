@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 
 class ChordModel {
   String id;
+  String variation;
   String chordTypeId;
   String chordSubtypeId;
   String? name;
@@ -11,6 +12,7 @@ class ChordModel {
 
   ChordModel({
     required this.id,
+    required this.variation,
     required this.chordTypeId,
     required this.chordSubtypeId,
     this.name,
@@ -23,10 +25,11 @@ class ChordModel {
       QueryDocumentSnapshot<Map<String, dynamic>> data) {
     return ChordModel(
       id: (data.data()["id"] ?? '') as String,
-      chordTypeId: (data.data()["chordTypeId"] ?? 0) as String,
+      variation: (data.data()["variation"] ?? '') as String,
+      chordTypeId: (data.data()["chordTypeId"] ?? '') as String,
       chordSubtypeId: (data.data()["chordSubtypeId"] ?? 0) as String,
       name: (data.data()["name"] ?? '') as String,
-      fullName: (data.data()["fullName"] ?? 0) as String,
+      fullName: (data.data()["fullName"] ?? '') as String,
       cipher: (data.data()["cipher"] ?? '') as String,
       image: (data.data()["image"] ?? '') as String,
     );

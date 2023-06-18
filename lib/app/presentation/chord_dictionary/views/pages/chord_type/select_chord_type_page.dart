@@ -34,22 +34,21 @@ class _SelectChordTypePageState extends ConsumerState<SelectChordTypePage> {
         body: Column(
           children: [
             const AppBarWidget(title: 'Dicionário de acordes'),
-            Expanded(
-              child: Container(
-                padding: const EdgeInsets.only(
-                  top: 30,
-                  left: 20,
-                  right: 20,
-                ),
-                decoration: const BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(30),
-                    topRight: Radius.circular(30),
-                  ),
-                ),
-                child: ChordTypeListWidget(chordType: state.data),
+            Container(
+              height: 600,
+              padding: const EdgeInsets.only(
+                top: 30,
+                left: 20,
+                right: 20,
               ),
+              decoration: const BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(30),
+                  topRight: Radius.circular(30),
+                ),
+              ),
+              child: ChordTypeListWidget(chordType: state.data),
             ),
           ],
         ),
